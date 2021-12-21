@@ -1,6 +1,24 @@
 # Some utils commands
 
 ```bash
+# Run ssh without execute .bashrc or .profile
+ssh user@host -p 22 /bin/bash
+
+# See diference between files
+diff file.old file.new
+
+# Scan for open ports and check if using SSL
+nmap -p 31000-32000 --script ssl-enum-ciphers localhost
+
+# Scan for open ports
+nmap -p 31000-32000 localhost
+
+# Connect to an server using SSL Encryption passing input data
+openssl s_client -ign_eof -connect localhost:30001 <<< "some_data"
+
+# Connect to an server using SSL Encryption
+openssl s_client -connect localhost:30001
+
 # Rot13 Caesar chiper with tr
 tr 'A-Za-z' 'N-ZA-Mn-za-m' <<< "Pass"
 
