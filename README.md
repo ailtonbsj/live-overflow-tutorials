@@ -1,6 +1,31 @@
 # Some utils commands
 
 ```bash
+# Show information about an tag
+git show mytag-v1.0-rc
+
+# Gaining shell access with vim
+# Type ":set shell=/bin/bash" and enter
+# Type ":shell" and enter
+
+# Gaining access to vim with more
+# Press key v
+
+# Generate sequence 0..10 with 0000 format
+seq -f "%04g" 0 10
+
+# Run a command and kill after some time
+timeout -s 9 60 nc -l -p 3000
+
+# See properties of an file
+stat myfile
+
+# Crontab File format manual
+man 5 crontab
+
+# Use netcat as a server
+nc -l -p 3000
+
 # Run ssh without execute .bashrc or .profile
 ssh user@host -p 22 /bin/bash
 

