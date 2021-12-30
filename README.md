@@ -1,6 +1,29 @@
+# Debugging with dgb on focal fossa
+
+```bash
+# Set limit of core dump as unlimited and show
+ulimit -S -c unlimited
+ulimit -c
+
+# OR set limit of core dump permanently
+sudo vi /etc/security/limits.conf
+# * soft core unlimited
+
+# Open core dump with gdb
+gdb ./app /var/lib/apport/coredump/core._path_to_app.whatever
+
+# Disassemble on gdb
+# disass main
+# disass foo_function
+```
+
 # Some utils commands
 
 ```bash
+# Compile C program without "stack smashing detected"
+echo "0" > /proc/sys/kernel/randomize_va_space
+gcc -m32 -zexecstack -fno-stack-protector -g -o app app.c
+
 # Show information about an tag
 git show mytag-v1.0-rc
 
@@ -31,6 +54,9 @@ ssh user@host -p 22 /bin/bash
 
 # See diference between files
 diff file.old file.new
+
+# Scan for open ports and detect version
+nmap -v -sV 192.168.1.4
 
 # Scan for open ports and check if using SSL
 nmap -p 31000-32000 --script ssl-enum-ciphers localhost
