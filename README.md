@@ -20,6 +20,18 @@ gdb ./app /var/lib/apport/coredump/core._path_to_app.whatever
 # Some utils commands
 
 ```bash
+# Format JSON file
+cat file.json | jq
+
+# Extract zlib on ubuntu
+zlib-flate -uncompress < file.zlib > file
+
+# See diference between two file with vim
+vimdiff hdfile1 hdfile2
+
+# Find type of file inside a binary
+binwalk file.bin
+
 # Compile C program without "stack smashing detected"
 echo "0" > /proc/sys/kernel/randomize_va_space
 gcc -m32 -zexecstack -fno-stack-protector -g -o app app.c
