@@ -113,3 +113,18 @@ echo hello | hexdump -C
 # Show ASCII Table
 man ascii
 ```
+# Convert formats with python
+
+```python
+# String to Bytes
+'José'.encode('utf-8') # Output: b'Jos\xc3\xa9'
+
+# Bytes to Hex string
+b'Jos\xc3\xa9'.hex() # Output: '4a6f73c3a9'
+
+# Hex string to Bytes
+bytes.fromhex('4a6f73c3a9') # Output: b'Jos\xc3\xa9'
+
+# Bytes to String
+b'Jos\xc3\xa9'.decode('utf-8') # Output: José
+```
