@@ -1,4 +1,4 @@
-# Debugging with dgb on focal fossa
+# Debugging with gdb on focal fossa
 
 ```bash
 # Set limit of core dump as unlimited and show
@@ -81,6 +81,12 @@ openssl s_client -ign_eof -connect localhost:30001 <<< "some_data"
 
 # Connect to an server using SSL Encryption
 openssl s_client -connect localhost:30001
+
+# Open a port using SSL Encryption
+ncat -vnlp 8443 --ssl-key key.pem --ssl-cert cert.pem
+
+# Connect to a port with SSL Encryption
+ncat -vn --ssl 10.10.0.1
 
 # Rot13 Caesar chiper with tr
 tr 'A-Za-z' 'N-ZA-Mn-za-m' <<< "Pass"
