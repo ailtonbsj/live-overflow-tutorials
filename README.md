@@ -1,6 +1,10 @@
 ## Some utils commands
 
 ```bash
+# Split vim [Use Ctrl+W to switch]
+# :! execute a command
+vim -O matrix.c matrix.py
+
 # Display output of last program
 echo  $?
 
