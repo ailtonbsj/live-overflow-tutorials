@@ -1,13 +1,16 @@
 # First reverse engineering
 
 ```bash
-
 # Compile C program with all protection disabled
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
-gcc license.c -o a.out -fno-stack-protector -z execstack -no-pie
+gcc license.c -fno-stack-protector -z execstack -no-pie
 
 # Debug program with gdb
 gdb a.out
+
+# show asm on executable file
+objdump -d a.out
+objdump -x a.out
 ```
 
 ## GDB commands
@@ -37,6 +40,9 @@ gdb a.out
 
 # Set value of register
 (gdb) set $eax=0
+
+# Print value on memory
+(gdb) x/s 0x00000001
 ```
 
 ## Extra commands for others linux
