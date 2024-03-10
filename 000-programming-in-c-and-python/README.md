@@ -1,4 +1,4 @@
-## Some utils commands
+## Programming in C and Python
 
 ```bash
 # Split vim [Use Ctrl+W to switch]
